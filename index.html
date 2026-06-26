@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phased Array Radar Simulator</title>
+    <style>
+        body {
+            background: #050510;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h2 { margin-bottom: 20px; }
+        canvas {
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            background: #0f172a;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+        }
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            gap: 5px;
+        }
+        input[type="range"] { width: 150px; }
+    </style>
+</head>
+<body>
+
+    <h2>フェーズドアレイレーダー シミュレーター</h2>
+    
+    <canvas id="radarCanvas" width="600" height="400"></canvas>
+
+    <div class="controls">
+        <label>
+            ビーム操舵角: <span id="angleVal">30</span>°
+            <input type="range" id="angleSlider" min="-60" max="60" value="30">
+        </label>
+        <label>
+            アンテナ素子数: <span id="elementVal">16</span>個
+            <input type="range" id="elementSlider" min="4" max="32" value="16">
+        </label>
+    </div>
+
+    <!-- TypeScriptファイルを直接読み込みます（Viteが自動変換してくれます） -->
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
